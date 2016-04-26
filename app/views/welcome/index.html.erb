@@ -1,2 +1,98 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+    $(document).ready(function()
+    {
+      var i = 0;
+
+
+
+      setInterval(function(){
+
+        i = parseInt(i)+1;
+        url = "/result/"+i;
+        $.get(url, function(data, status)
+        {
+          var rowCount = $('#tab tr').length;
+          console.log(data);
+          console.log(rowCount);
+          if(rowCount>20)
+          {
+            $("#tab tr:eq(1)").fadeOut(1000,function()
+            {
+              $("#tab tr:eq(1)").remove();
+              $("#tab tr:eq(2)").remove();
+            });
+          }
+          var brandname=data["brandname"];
+          var chemicalname=data["chemicalname"];
+          var companyname=data["companyname"];
+          var category=data["category"];
+          var productname=data["productname"];
+          var id=data["unique"];
+          var row = $("<tr>")
+          row.append($("<td>" + id + "</td>"));
+          row.append($("<td>" + brandname + "</td>"));
+          row.append($("<td>" + chemicalname + "</td>"));
+          row.append($("<td>" + companyname + "</td>"));
+          row.append($("<td>" + category + "</td>"));
+          row.append($("<td>" + productname + "</td>"));
+
+          $("#tab").append(row);
+          row.fadeIn();
+        });
+
+
+      }, 1000);
+
+      //	var cc=setInterval(function(){myTime()},500 );
+
+
+    })
+  </script>
+  <style>
+    .center {
+      margin-left: 25%;
+      margin-right: 40%;
+      margin-top: 20%;
+      width: 50%;
+      height: 40%;
+      -webkit-border-radius: 28;
+      -moz-border-radius: 28;
+      border-radius: 28px;
+      font-family: Arial;
+      font-size:30px;
+      color: #ffffff;
+      background-color: #b0e0e6;
+    }
+    body
+    {
+      background-size: 1500px 760px;
+      background-repeat: no-repeat;
+      background-color:white;
+    }
+  </style>
+
+</head>
+<body>
+<div  class="wrapper">
+
+  <table  id = "tab" border="1">
+    <h1><caption>Chemicals in Cosmetics</caption></h1>
+    <tr>
+      <th>ID</th>
+      <th width=344px>BrandName</th>
+      <th width=400px >ChemicalName</th>
+      <th width=400px >CompanyName</th>
+      <th width=400px >Category</th>
+      <th width=400px >ProductName</th>
+
+
+    </tr>
+  </table>
+
+</div>
+
+</html>
