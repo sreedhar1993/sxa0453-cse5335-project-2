@@ -1,28 +1,20 @@
-== README
+# sxa0453-cse5335-project-1
+####a. What aspect of the implementation did you find easy, if any, and why?
+Easiest part was creating  mongoDB in heroku and rendering data from the database.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+####b. What aspect of the implementation did you find hard, if any, and why?  
+I found displaying 20 data items difficult and took time for me. Deploying to heroku had many issues with the gem versions.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+####c. If you were to use these technologies professionally, what would be your biggest concern?
+If i had to use these technologies in future, the major concern would be updates to ruby gems, we have to always update to latest version of gem or need to mention the version which we want to use to runn your project.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+## Documentation
+
+For more information about using Ruby on Heroku, see these Dev Center articles:
+
+- [Ruby on Heroku](https://devcenter.heroku.com/categories/ruby)
+
+
+
