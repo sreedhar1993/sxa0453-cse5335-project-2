@@ -21,7 +21,7 @@
           console.log(rowCount);
           if(rowCount>20)
           {
-            $("#tab tr:eq(1)").fadeOut(slow,function()
+            $("#tab tr:eq(1)").fadeOut(500,function()
             {
               $("#tab tr:eq(1)").remove();
               $("#tab tr:eq(2)").remove();
@@ -42,7 +42,7 @@
           row.append($("<td>" + productname + "</td>"));
 
           $("#tab").append(row);
-          row.fadeIn(slow);
+          row.fadeIn();
         });
 
 
@@ -70,7 +70,7 @@
       background-color: #b0e0e6;
     }
     table#tab{
-      background-color: #B6B6B4
+      background-color: #B6B6B4;
       color: black;
       border: 1px solid black;
     }
@@ -91,7 +91,7 @@
 <body>
 <div  class="wrapper">
   <center><h1>Types of Chemicals in Cosmetics</h1></center>
-  <input align="center" type="button" id="button1" value="Click Me !!!" style="color:black;background-color:lightgrey" name="button"/>
+  <center><input type="button" id="button1" value="Click Me !!!" style="color:black;background-color:lightgrey" name="button"/></center>
   <br/>
   <table  cellspacing='0' cellpadding='5' id = "tab"  align="center">
 
